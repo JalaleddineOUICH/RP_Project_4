@@ -1,0 +1,481 @@
+[
+    {
+        "id": "9197d8a5d77bc3ec",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "ba226a75d57b1dc4",
+        "type": "mqtt in",
+        "z": "9197d8a5d77bc3ec",
+        "name": "Subscribe_Acc",
+        "topic": "Acceleration",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "3d9678f62b948483",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 200,
+        "y": 300,
+        "wires": [
+            [
+                "f190266a42e364f3"
+            ]
+        ]
+    },
+    {
+        "id": "84586c655d754f2b",
+        "type": "mqtt in",
+        "z": "9197d8a5d77bc3ec",
+        "name": "Subscribe_Weather",
+        "topic": "Air",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "3d9678f62b948483",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 210,
+        "y": 380,
+        "wires": [
+            [
+                "a8eb753e99d9476c"
+            ]
+        ]
+    },
+    {
+        "id": "f26720732659e5c7",
+        "type": "mqtt in",
+        "z": "9197d8a5d77bc3ec",
+        "name": "Subscribe_T",
+        "topic": "Temperature",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "3d9678f62b948483",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 190,
+        "y": 100,
+        "wires": [
+            [
+                "dc729147e44d811b"
+            ]
+        ]
+    },
+    {
+        "id": "45dfe3a89d9d2386",
+        "type": "change",
+        "z": "9197d8a5d77bc3ec",
+        "name": "Set.pression",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$number(payload)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 390,
+        "y": 160,
+        "wires": [
+            [
+                "fe86418ffd1f14ea"
+            ]
+        ]
+    },
+    {
+        "id": "ca5d554c3163fdce",
+        "type": "mqtt in",
+        "z": "9197d8a5d77bc3ec",
+        "name": "Subscribe_P",
+        "topic": "Pression",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "3d9678f62b948483",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 190,
+        "y": 160,
+        "wires": [
+            [
+                "45dfe3a89d9d2386"
+            ]
+        ]
+    },
+    {
+        "id": "955afe4e89f739a9",
+        "type": "change",
+        "z": "9197d8a5d77bc3ec",
+        "name": "Set.humidite",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$number(payload)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 390,
+        "y": 200,
+        "wires": [
+            [
+                "87998dd78c95d594"
+            ]
+        ]
+    },
+    {
+        "id": "655a22889be410d8",
+        "type": "mqtt in",
+        "z": "9197d8a5d77bc3ec",
+        "name": "Subscribe_H",
+        "topic": "Humidite",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "3d9678f62b948483",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 190,
+        "y": 220,
+        "wires": [
+            [
+                "955afe4e89f739a9"
+            ]
+        ]
+    },
+    {
+        "id": "dc729147e44d811b",
+        "type": "change",
+        "z": "9197d8a5d77bc3ec",
+        "name": "Set.temperature",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$number(payload)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 120,
+        "wires": [
+            [
+                "287c7d106c9d2b3f",
+                "63d5d3c5ee3b5939"
+            ]
+        ]
+    },
+    {
+        "id": "287c7d106c9d2b3f",
+        "type": "ui_gauge",
+        "z": "9197d8a5d77bc3ec",
+        "name": "",
+        "group": "bdb7ef746e3bf601",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Thermometer",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 620,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "63d5d3c5ee3b5939",
+        "type": "ui_chart",
+        "z": "9197d8a5d77bc3ec",
+        "name": "",
+        "group": "471fb087b36d35a8",
+        "order": 1,
+        "width": "6",
+        "height": "7",
+        "label": "Temperature",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 610,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "87998dd78c95d594",
+        "type": "ui_gauge",
+        "z": "9197d8a5d77bc3ec",
+        "name": "",
+        "group": "bdb7ef746e3bf601",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Hygrometer",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 610,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "fe86418ffd1f14ea",
+        "type": "ui_gauge",
+        "z": "9197d8a5d77bc3ec",
+        "name": "",
+        "group": "bdb7ef746e3bf601",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Barometer",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "5000",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 610,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "b855f4df6c65b553",
+        "type": "inject",
+        "z": "9197d8a5d77bc3ec",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Hello World",
+        "payloadType": "str",
+        "x": 210,
+        "y": 500,
+        "wires": [
+            [
+                "acfafdfeab534ad6"
+            ]
+        ]
+    },
+    {
+        "id": "acfafdfeab534ad6",
+        "type": "mqtt out",
+        "z": "9197d8a5d77bc3ec",
+        "name": "",
+        "topic": "text",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "3d9678f62b948483",
+        "x": 540,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "a8eb753e99d9476c",
+        "type": "ui_text",
+        "z": "9197d8a5d77bc3ec",
+        "group": "2a8feb716f1e0dd2",
+        "order": 5,
+        "width": "5",
+        "height": "1",
+        "name": "",
+        "label": "Weather",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 470,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "f190266a42e364f3",
+        "type": "ui_text",
+        "z": "9197d8a5d77bc3ec",
+        "group": "8708b66a48ea0196",
+        "order": 4,
+        "width": "5",
+        "height": "1",
+        "name": "",
+        "label": "Les trois axes :",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 500,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "3d9678f62b948483",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "bdb7ef746e3bf601",
+        "type": "ui_group",
+        "name": "Environnement",
+        "tab": "1782ba7284296a3d",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "471fb087b36d35a8",
+        "type": "ui_group",
+        "name": "Temperature Graph",
+        "tab": "1782ba7284296a3d",
+        "order": 7,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "2a8feb716f1e0dd2",
+        "type": "ui_group",
+        "name": "Paris_weather",
+        "tab": "1782ba7284296a3d",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "8708b66a48ea0196",
+        "type": "ui_group",
+        "name": "Acceleration",
+        "tab": "1782ba7284296a3d",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "1782ba7284296a3d",
+        "type": "ui_tab",
+        "name": "SENSE_HAT",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
