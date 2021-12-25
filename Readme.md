@@ -1,5 +1,4 @@
-# Réalisé par : OUICH Jalaleddine
-#               BAAZIZ Elmehdi
+# Réalisé par : OUICH Jalaleddine & BAAZIZ Elmehdi
 # Readme
 
 Ce projet consiste à établir une communication entre deux Raspberry Pi via le protocole MQTT.
