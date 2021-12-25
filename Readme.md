@@ -32,21 +32,21 @@ Pour vérifier si ça marche ou pas , suivez les instructions [ici](https://proj
 
 Pour transmettre les informations on utilise le schéma suivant :
 
-![](D:\OUT.JPG)
+![](OUT.JPG)
 
 Le node *publish* est configuré avec l'ip du récepteur ( Brokker ) , et avec un Topic bien précis :
 
-![](D:\out1.JPG)
+![](out1.JPG)
 
 
 
 Pour la réception des données : 
 
-![](D:\IN.JPG)
+![](IN.JPG)
 
 Les nodes *Subscribe_* sont configurés , en précisant le *Topic* pour bien récevoir les données :
 
-![](D:\in2.JPG)
+![](in2.JPG)
 
 Les résultats sont affichées dans un Dashboard.
 
