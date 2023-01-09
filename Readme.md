@@ -1,12 +1,12 @@
 # Readme
 
-# Réalisé par : OUICH Jalaleddine & BAAZIZ Elmehdi
+# Réalisé par : OUICH Jalaleddine 
 
 Ce projet consiste à établir une communication entre deux Raspberry Pi via le protocole MQTT.
 
-On a essayé d'afficher les données collectées par SenseHat1 dans le Dashboard de la Raspberry Pi 2 .
+Le but c'est d'afficher les données collectées par SenseHat1 dans le Dashboard de la Raspberry Pi 2 .
 
-Pour notre cas  , on a utilisé NodeRed pour réaliser ce projet.
+Le développement était fait avec NodeRed pour réaliser ce projet.
 
 
 
